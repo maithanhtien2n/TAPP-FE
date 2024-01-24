@@ -1,0 +1,326 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Oswald&family=Questrial&family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Oswald&family=Roboto:wght@300&display=swap");
+
+@import "color.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  font-family: "Questrial", sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  -moz-tap-highlight-color: transparent;
+  -ms-tap-highlight-color: transparent;
+}
+
+body {
+  /* background-color: #f0f2f5; */
+}
+
+.container {
+  width: 1300px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.text-custom-mini {
+  font-size: 0.8rem;
+}
+
+.text-custom-1 {
+  font-size: 1.2rem;
+}
+
+.text-custom-2 {
+  font-size: 1.2rem;
+}
+
+.object-fit-cover {
+  object-fit: cover;
+}
+
+.on-click,
+.on-click-1,
+.on-click-2,
+.on-click-3 {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.on-click:active {
+  opacity: 0.8;
+}
+
+.on-click-1:active {
+  color: var(--mainColor);
+}
+
+.on-click-2 {
+  transition: all 0.2s ease;
+}
+
+.on-click-2:hover {
+  background-color: #a8a8a877;
+}
+
+.on-click-3 {
+  transition: all 0.1s ease;
+}
+
+.on-click-3:active {
+  transform: scale(1.1);
+}
+
+.avatar {
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 50%;
+}
+
+.box-shadow {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px !important;
+}
+
+.box-shadow-1 {
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.box-shadow-2 {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px !important;
+}
+
+/* .card {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: .5rem;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+} */
+
+.card {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.02), 0px 0px 2px rgba(0, 0, 0, 0.05),
+    0px 1px 4px rgba(0, 0, 0, 0.08) !important;
+}
+
+.btn {
+  padding: 1rem;
+  border-radius: 50rem;
+  outline: none;
+  border: none;
+  border: 1px solid #ddd;
+}
+
+.chat-container {
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.unselectable {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.count {
+  width: 1rem;
+  height: 1rem;
+  background-color: #e41e3f;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  color: #fff;
+  top: -0.1rem;
+  right: -0.1rem;
+  font-size: 0.6rem;
+}
+
+/* Dài quá thì tối đa 2 dòng và có ... */
+.fixed-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: normal;
+  white-space: pre-line;
+  word-break: break-word;
+}
+
+.fixed-text-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: normal;
+  white-space: pre-line;
+  word-break: break-word;
+  /* white-space: nowrap; */
+}
+
+/* Ghi đề primevue */
+.banner .p-carousel-indicators {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.2rem !important;
+}
+
+.p-tabview-nav-link {
+  padding: 0.8rem 1.25rem !important;
+  border-radius: 0 !important;
+}
+
+.p-tabview .p-tabview-panels {
+  padding: 1rem 0rem !important;
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+  border-width: 0 0 0 0 !important;
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+  border-width: 0 0 0 0 !important;
+}
+
+.p-button-label {
+  font-weight: 100 !important;
+}
+
+.p-paginator .p-paginator-first,
+.p-paginator .p-paginator-prev,
+.p-paginator .p-paginator-next,
+.p-paginator .p-paginator-last {
+  min-width: 2.3rem !important;
+  height: 2.3rem !important;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page {
+  min-width: 2.3rem !important;
+  height: 2.3rem !important;
+}
+
+.p-paginator .p-dropdown {
+  height: 2.3rem !important;
+}
+
+.p-paginator .p-inputtext {
+  padding: 0.37rem 0.75rem !important;
+}
+
+.p-paginator .p-dropdown .p-dropdown-trigger {
+  width: 2.3rem !important;
+}
+
+/* Button */
+.p-button {
+  padding: 0.6rem 1rem !important;
+}
+
+.p-inputtext {
+  padding: 0.5rem !important;
+  border-radius: 3px !important;
+}
+
+.p-dropdown {
+  border-radius: 3px !important;
+}
+
+.p-error {
+  font-size: 0.9rem;
+}
+
+.p-image-preview {
+  padding: 4rem 3rem !important;
+}
+
+.p-dialog {
+  min-width: 25rem !important;
+}
+
+.p-scrollpanel .p-scrollpanel-bar {
+  background-color: #d3d3d3 !important;
+}
+
+.p-scrollpanel .p-scrollpanel-bar {
+}
+
+.p-sidebar .p-sidebar-header {
+  padding: 1rem 1rem 0 1rem !important;
+}
+
+.p-inputtext:enabled:focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: none !important;
+  border-color: none !important;
+}
+
+.p-button:focus {
+  box-shadow: none !important;
+}
+
+.p-dropdown:not(.p-disabled).p-focus {
+  box-shadow: none !important;
+  border-color: none !important;
+}
+
+.p-image-preview {
+  background-color: #fff !important;
+}
+
+.p-dialog .p-dialog-content {
+  padding: 0 1.5rem 0.5rem 1.5rem !important;
+}
+
+.p-sidebar .p-sidebar-content {
+  padding: 0 !important;
+}
+
+.p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-focus {
+  box-shadow: none !important;
+}
+
+.p-dialog .p-dialog-header {
+  padding: 1rem 1rem 0.5rem 1rem !important;
+}
+
+.p-dialog .p-dialog-content {
+  padding: 0 1rem 1rem 1rem !important;
+}
+
+.p-dialog .p-dialog-footer {
+  padding: 0 1rem 1rem 1rem !important;
+}
+
+.p-dialog {
+  min-width: 18rem !important;
+}
+
+@media only screen and (max-width: 1335px) {
+  .container {
+    width: 95% !important;
+    position: relative;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .container {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .p-tabview-panels {
+    padding: 1rem 0rem !important;
+  }
+}
