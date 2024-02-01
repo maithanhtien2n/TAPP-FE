@@ -50,10 +50,11 @@ const {
 
 const onSubmit = handleSubmit(async () => {
   const res = await onActionSaveUserInfo(userId.value, infoData);
-  if (res.success)
+  if (res.success) {
     onActionGetUserInfo(userId.value, true).then((res) => {
       if (res.success) appLocalStorage.value.userData = res?.data;
     });
+  }
 });
 
 watch(userInfo, (newValue) => {

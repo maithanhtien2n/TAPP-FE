@@ -22,5 +22,3 @@ const isShowHeader = computed(() => +ROUTE.fullPath.split("/").length <= 2);
     <TheFooter />
   </div>
 </template>
-
-<style scoped></style>

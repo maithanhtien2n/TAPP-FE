@@ -1,6 +1,6 @@
 <script setup>
 import * as Yup from "yup";
-import { useForm } from "vee-validate";
+import { useForm, useField } from "vee-validate";
 import { STORE_ACCOUNT } from "@/services/stores";
 import IconTitle from "@/components/common/IconTitle.vue";
 import ImageValidate from "@/components/validation/ImageValidate.vue";
@@ -18,6 +18,7 @@ const formData = reactive({
   bankName: "",
   accountName: "",
   accountNumber: null,
+  note: "",
 });
 
 const schema = Yup.object({
@@ -38,8 +39,10 @@ const {
   keepValuesOnUnmount: true,
 });
 
+const { value: note } = useField("note");
+
 const onSubmit = handleSubmit(async () => {
-  const res = await onActionSaveBankAccount(
+  onActionSaveBankAccount(
     [infoData].map((item) => ({
       ...item,
       imgQr: item.imgQr.base64.split(":")[0] === "data" ? item.imgQr : null,
@@ -59,7 +62,7 @@ watch(bankAccountInfo, (newBankAccountInfo) => {
 });
 
 onMounted(() => {
-  onActionGetBankAccountDetail("659bcf82a0027339a1e59fe5");
+  onActionGetBankAccountDetail();
 });
 </script>
 
@@ -87,6 +90,11 @@ onMounted(() => {
           class="w-full"
           type="number"
         />
+
+        <div class="flex flex-column gap-2">
+          <span>Ghi chú</span>
+          <Textarea v-model="note" autoResize rows="3" />
+        </div>
 
         <Button label="Lưu thông tin" @click="onSubmit" />
       </div>

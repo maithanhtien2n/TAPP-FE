@@ -9,6 +9,7 @@ const props = defineProps({
   style: { type: Object, required: false, default: () => {} },
   disabled: { type: Boolean, required: false, default: false },
   placeholder: { type: String, required: false, default: "" },
+  required: { type: Boolean, required: false, default: true },
   dropdownProps: {
     type: Object,
     required: false,
@@ -16,9 +17,7 @@ const props = defineProps({
       return {
         optionLabel: "name",
         optionValue: "code",
-        placeholder: "",
         class: "",
-        required: true,
       };
     },
   },

@@ -5,9 +5,6 @@ import { STORE_CATEGORY } from "@/services/stores";
 import { useRoute, useRouter } from "vue-router";
 import { userData, accessToken } from "@/utils";
 import ButtonBack from "./components/ButtonBack.vue";
-import { ToastService } from "@/utils/toast";
-
-const TOAST = ToastService();
 
 const ROUTE = useRoute();
 const ROUTER = useRouter();
@@ -16,7 +13,6 @@ const {
   onGetterMessages: messages,
   onActionChat,
   onActionCheckLinkChat,
-  onActionGetVirtualAssistant,
 } = STORE_CATEGORY.StoreVirtualAssistant();
 
 const question = ref("");
@@ -106,21 +102,6 @@ onMounted(async () => {
   }
 
   onSetScrollTop();
-
-  if (!accessToken.value) {
-    return;
-  }
-
-  const resGetVirtualAssistant = await onActionGetVirtualAssistant(
-    userId.value,
-    true
-  );
-
-  if (!resGetVirtualAssistant.data?.system) {
-    TOAST.info("Bot không thể hoạt động khi chưa được cấu hình!");
-    ROUTER.replace({ name: "VirtualAssistant" });
-    return;
-  }
 });
 </script>
 

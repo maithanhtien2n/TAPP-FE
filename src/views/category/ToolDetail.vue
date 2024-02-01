@@ -1,20 +1,17 @@
 <script setup>
-import { STORE_CATEGORY } from "@/services/stores";
 import { computed, onMounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
+import { STORE_CATEGORY } from "@/services/stores";
 
 const ROUTE = useRoute();
 const ROUTER = useRouter();
 
-const { onGetterToolDetail, onActionGetToolDetail } =
-  STORE_CATEGORY.StoreCategory();
+const { onActionCheckProTool } = STORE_CATEGORY.StoreCategory();
 
-const isShowExit = computed(() => +ROUTE.fullPath.split("/").length === 3);
-
-const toolDetail = computed(() => onGetterToolDetail.value);
+const isShowExit = computed(() => +ROUTE.fullPath.split("/").length === 4);
 
 onMounted(() => {
-  // onActionGetToolDetail(ROUTE.query.toolId);
+  onActionCheckProTool(ROUTE.params.id);
 });
 </script>
 

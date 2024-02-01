@@ -34,10 +34,6 @@ const ROUTER = useRouter();
         </button>
       </div>
     </div>
-    <!-- Content -->
-    <!-- <DescriptionBot v-if="menuSelect !== 'BOT_RESULT'" :type="menuSelect" />
-
-    <Messages v-else /> -->
   </div>
 </template>
 

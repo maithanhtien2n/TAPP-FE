@@ -33,7 +33,6 @@ export const StoreVirtualAssistant = defineStore(
     };
 
     const onActionChat = async (args) => {
-      console.log(args);
       const res = await onResponse(API.chat(args));
 
       return res;

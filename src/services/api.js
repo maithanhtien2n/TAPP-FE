@@ -1,5 +1,6 @@
 import axios from "axios";
 import { StoreApp } from "./stores";
+import router from "@/services/router";
 import { accessToken, onDeleteAppLocalStorage } from "@/utils";
 
 export * as API_CATEGORY from "@/views/category/services/api";
@@ -64,15 +65,27 @@ AxiosInstance.interceptors.response.use(
     return response;
   },
   (error) => {
+    if (["Trang không tồn tại!"].includes(error.response.data.statusValue)) {
+      router.replace({ name: "NotFound" });
+    }
+
     if (
       [
         "Vui lòng đăng nhập để sử dụng tính năng này!",
         "Phiên đăng nhập đã hết hạn!",
-        "Xác thực token thất bại!",
+        "Xác thực thất bại!",
         "Tài khoản của bạn đã bị khóa!",
       ].includes(error.response.data.statusValue)
     ) {
       onDeleteAppLocalStorage();
+    }
+
+    if (
+      ["Tính năng chỉ dành cho tài khoản pro!"].includes(
+        error.response.data.statusValue
+      )
+    ) {
+      router.replace({ name: "Tool" });
     }
 
     StoreApp().onActionLoadingActive(false);

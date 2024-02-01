@@ -59,23 +59,15 @@ const onSubmit = handleSubmit(async () => {
         <!-- Văn bản -->
         <div
           style="min-width: 18rem"
-          class="editor-container flex flex-column flex-1 gap-3"
+          class="text-convert-container flex flex-column flex-1 gap-3"
         >
           <span>Văn bản sau khi chuyển đổi</span>
-          <Editor
-            v-model="formData.text"
-            class="editor"
-            style="height: 300px"
-            :class="{ 'p-disabled': !formData.text }"
-          >
-            <template v-slot:toolbar>
-              <span class="ql-formats">
-                <button v-tooltip.bottom="'Bold'" class="ql-bold" />
-                <button v-tooltip.bottom="'Italic'" class="ql-italic" />
-                <button v-tooltip.bottom="'Underline'" class="ql-underline" />
-              </span>
-            </template>
-          </Editor>
+
+          <div
+            v-html="formData.text"
+            style="white-space: pre-wrap; border: 1px solid #ddd"
+            class="text-convert h-full p-3 text-700 line-height-2"
+          />
         </div>
       </div>
     </div>
@@ -85,7 +77,7 @@ const onSubmit = handleSubmit(async () => {
 <style scoped>
 @media only screen and (max-width: 620px) {
   .image-container,
-  .editor-container {
+  .text-convert-container {
     gap: 0.3rem !important;
   }
 
@@ -97,9 +89,8 @@ const onSubmit = handleSubmit(async () => {
     margin-top: 0.8rem;
   }
 
-  .editor {
-    height: 200px !important;
-    margin-bottom: 2.4rem;
+  .text-convert {
+    min-height: 18rem !important;
   }
 }
 </style>

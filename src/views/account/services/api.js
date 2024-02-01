@@ -60,6 +60,7 @@ class ApiAccount {
   };
 
   saveBankAccount = async (args) => {
+    console.log(args);
     return await AxiosInstance({
       method: "PUT",
       url: `bank-account`,

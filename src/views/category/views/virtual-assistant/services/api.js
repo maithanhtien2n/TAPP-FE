@@ -18,7 +18,6 @@ class ApiVirtualAssistant {
   };
 
   chat = async (args) => {
-    console.log(args);
     return await AxiosInstance({
       method: "POST",
       url: `virtual-assistant/chat`,

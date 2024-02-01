@@ -271,6 +271,18 @@ onMounted(() => {
           </Column>
 
           <Column
+            field="isUserPro"
+            header="Loại tài khoản"
+            class="white-space-nowrap"
+            style="width: 7rem"
+            :sortable="true"
+          >
+            <template #body="{ data }">
+              <span>{{ data.isUserPro ? "Pro" : "No Pro" }}</span>
+            </template>
+          </Column>
+
+          <Column
             field="moneyBalance"
             header="Số dư"
             class="white-space-nowrap"

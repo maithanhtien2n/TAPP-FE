@@ -1,5 +1,6 @@
 import App from "@/App.vue";
 import { accessToken } from "@/utils";
+import { AxiosInstance } from "@/services/api";
 import { createRouter, createWebHistory } from "vue-router";
 
 import RoutesHome from "@/views/home/services/routes";
@@ -50,6 +51,12 @@ router.beforeEach(async (to, from, next) => {
       if (to.name === "Login") {
         return next({ name: "Home" });
       }
+
+      const fullPath = to.fullPath.split("/");
+      if (fullPath.length > 2 && fullPath[1] === "tool") {
+        AxiosInstance.defaults.headers.common["ToolId"] = fullPath[3];
+      }
+
       next();
     } else {
       if (

@@ -23,9 +23,10 @@ export const Utils = () => {
         })
         .catch((error) => {
           if (error.response) {
-            TOAST.error(error.response.data.statusValue);
+            TOAST.info(error.response.data.statusValue);
             return;
           }
+
           TOAST.error(error);
         });
     }

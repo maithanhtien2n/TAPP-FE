@@ -39,6 +39,12 @@ onMounted(() => {
         <span>{{ bankAccountInfo?.bankName }}</span>
         <span>{{ bankAccountInfo?.accountName }}</span>
         <span>{{ bankAccountInfo?.accountNumber }}</span>
+
+        <div
+          v-html="bankAccountInfo?.note"
+          style="white-space: pre-wrap"
+          class="line-height-3"
+        />
       </div>
     </div>
   </div>
